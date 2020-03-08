@@ -9,11 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 
-import com.sk.qna.dataaccessobject.QuestionRepository;
 import com.sk.qna.service.QuestionAnswerService;
-import com.sk.qna.service.QuestionAnswerServiceImpl;
 import com.sk.qna.util.ValidationUtil;
 
 @Component

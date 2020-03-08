@@ -1,6 +1,5 @@
 package com.sk.qna.dataobject;
 
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,7 +9,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
 import javax.persistence.Version;
 
 

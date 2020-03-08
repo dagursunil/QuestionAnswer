@@ -11,7 +11,6 @@ import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,15 +61,16 @@ public class QuestionAnswerServiceImplTest {
 		assertEquals(1, answers.size());
 	}
 	
-	@Test 
+	 @Test
 	public void addQuestionTest() {
 		Question q= createUserEntity();
+		q.setQuestion("question");
 		Mockito.when(repo.save(q)).thenReturn(q);
-		Mockito.when(repo.findByQuestion("question1")).thenReturn(Optional.ofNullable(q));
-		service.addQuestion("question1", "answer1");
-		List<String> answers=service.getAnswers("question1");
+		Mockito.when(repo.findByQuestion("question")).thenReturn(Optional.ofNullable(q));
+		service.addQuestion("question", "answer1");
+		List<String> answers=service.getAnswers("question");
 		assertNotNull(answers);
-		assertEquals(1, answers.size());
+		assertEquals("answer1", answers.get(0));
 		
 	}
 }
