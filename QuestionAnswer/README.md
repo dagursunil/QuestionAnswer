@@ -6,7 +6,7 @@ If answer is not available a generic answer will be provided.
 
 a.) While adding a question format should be as question?"answer1""answer2"....
 
-b.)	Wen has been enabled currently only to connect to In memory database console H2.
+b.)	Web has been enabled currently only to connect to In memory database console H2.
 
 # How to build
 
