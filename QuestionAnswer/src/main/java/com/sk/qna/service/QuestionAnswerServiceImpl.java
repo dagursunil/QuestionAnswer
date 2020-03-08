@@ -53,7 +53,10 @@ public class QuestionAnswerServiceImpl implements QuestionAnswerService {
 
 			ques.setAnswers(s1);
 			try {
-				save(ques);
+				Optional<Question> queDb = qRep.findByQuestion(question);
+				if (!queDb.isPresent()) {
+					save(ques);
+				}
 			} catch (Exception e) {
 				System.out.println("error: " + e.getMessage());
 			}

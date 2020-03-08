@@ -38,11 +38,11 @@ public class QuestionAnswerServiceImplTest {
 	
 	@Before
 	public void setup() {
-		Question question=createUserEntity();
+		Question question=createQuestionEntity();
 		repo.save(question);
 	}
 	
-	private Question createUserEntity() {
+	private Question createQuestionEntity() {
 		Question question= new Question();
 		question.setQuestion("question1");
 		Answer answer=new Answer();
@@ -54,7 +54,7 @@ public class QuestionAnswerServiceImplTest {
 	
 	@Test
 	public void testGetAnswers() {
-		Question q= createUserEntity();
+		Question q= createQuestionEntity();
 		Mockito.when(repo.findByQuestion("question1")).thenReturn(Optional.ofNullable(q));
 		List<String> answers=service.getAnswers("question1");
 		assertNotNull(answers);
@@ -63,7 +63,7 @@ public class QuestionAnswerServiceImplTest {
 	
 	 @Test
 	public void addQuestionTest() {
-		Question q= createUserEntity();
+		Question q= createQuestionEntity();
 		q.setQuestion("question");
 		Mockito.when(repo.save(q)).thenReturn(q);
 		Mockito.when(repo.findByQuestion("question")).thenReturn(Optional.ofNullable(q));
