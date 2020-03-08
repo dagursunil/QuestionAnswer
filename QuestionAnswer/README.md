@@ -4,7 +4,7 @@ This project will take user inputs as 1 & 2 and provide answers for questions as
 If answer is not available a generic answer will be provided.
 # Points to be noted
 
-a.) While adding a question format should be as '<question>?"<answer1>""<answer2>"...'.
+a.) While adding a question format should be as question?"answer1""answer2"....
 
 b.)	Wen has been enabled currently only to connect to In memory database console H2.
 
