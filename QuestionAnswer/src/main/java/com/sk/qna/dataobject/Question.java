@@ -11,7 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
-
+/**
+ * 
+ * @author sdagur
+ *
+ */
 @Entity
 public class Question {
 	

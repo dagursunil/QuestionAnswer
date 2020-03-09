@@ -11,6 +11,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.sk.qna.QnAApplication;
 
+/**
+ * 
+ * @author sdagur
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ActiveProfiles("test")
 @ContextConfiguration(classes = QnAApplication.class, 

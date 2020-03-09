@@ -7,6 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.sk.qna.dataobject.Question;
 
+/**
+ * 
+ * @author sdagur
+ *
+ */
 public interface QuestionRepository extends JpaRepository<Question, Long>{
 
 	 @Query(nativeQuery = true, value = "select * from question where question = ?")

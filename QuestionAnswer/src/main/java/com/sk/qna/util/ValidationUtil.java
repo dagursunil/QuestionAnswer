@@ -1,5 +1,10 @@
 package com.sk.qna.util;
 
+/**
+ * 
+ * @author sdagur
+ *
+ */
 public class ValidationUtil {
 
 	public static boolean validateLength(String input) {

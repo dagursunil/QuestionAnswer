@@ -13,6 +13,11 @@ import org.springframework.stereotype.Component;
 import com.sk.qna.service.QuestionAnswerService;
 import com.sk.qna.util.ValidationUtil;
 
+/**
+ * 
+ * @author sdagur
+ *
+ */
 @Component
 @Profile("!test")
 public class QuestionRunner implements CommandLineRunner {
@@ -22,31 +27,30 @@ public class QuestionRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// service.addQuestion("Ques", "");
 		Scanner inputKeys = new Scanner(System.in);
-		System.out.println("Enter 1 to ask a question: ");
-		System.out.println("Enter 2 to submit an answer: ");
-		System.out.println("Enter any other number to exit: ");
+		System.out.println("Please enter 1 to ask a question: ");
+		System.out.println("Please enter 2 to submit an answer: ");
+		System.out.println("Please enter any other number to exit: ");
 		try {
 			int input = inputKeys.nextInt();
 
 			while (true) {
 				if (input == 1) {
-					System.out.println("Ask question: ");
+					System.out.println("What is your question : ");
 					BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 					String question = reader.readLine();
 					printAnswer(question);
-					System.out.println("\n" + "Next input please");
+					System.out.println("\n" + "Next input please.");
 					input = inputKeys.nextInt();
 				} else if (input == 2) {
 					System.out.println("Lets submit an answer");
 					BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 					String answer = reader.readLine();
 					addAnswer(answer);
-					System.out.println("\n" + "Next input please");
+					System.out.println("\n" + "Next input please.");
 					input = inputKeys.nextInt();
 				} else {
-					System.out.println("Exit command received");
+					System.out.println("Exit command received.Bye.");
 					inputKeys.close();
 					System.exit(1);
 
@@ -54,7 +58,7 @@ public class QuestionRunner implements CommandLineRunner {
 
 			}
 		} catch (Exception e) {
-			System.out.println("Invalid user input , exiting program.");
+			System.out.println("Invalid user input, exiting program.Bye.");
 			System.exit(1);
 		}
 

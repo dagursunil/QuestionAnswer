@@ -5,6 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+/**
+ * 
+ * @author sdagur
+ *
+ */
 @Entity
 public class Answer {
 	@Id

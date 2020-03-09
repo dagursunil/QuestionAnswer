@@ -24,6 +24,11 @@ import com.sk.qna.dataaccessobject.QuestionRepository;
 import com.sk.qna.dataobject.Answer;
 import com.sk.qna.dataobject.Question;
 
+/**
+ * 
+ * @author sdagur
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ActiveProfiles("test")
 @ContextConfiguration(classes = QnAApplication.class, 

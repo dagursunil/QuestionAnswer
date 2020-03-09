@@ -8,9 +8,13 @@ import org.springframework.data.jpa.repository.Query;
 import com.sk.qna.dataobject.Answer;
 
 
-
+/**
+ * 
+ * @author sdagur
+ *
+ */
 public interface AnswerRepository extends JpaRepository<Answer, Long>{
 
-	 @Query(nativeQuery = true, value = "select * from wallet where question_id = ?")
+	 @Query(nativeQuery = true, value = "select * from answer where question_id = ?")
 	List<Answer> findByQustionId(Long questionId);
 }

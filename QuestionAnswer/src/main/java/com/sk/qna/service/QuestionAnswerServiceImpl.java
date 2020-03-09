@@ -19,6 +19,11 @@ import com.sk.qna.dataobject.Answer;
 import com.sk.qna.dataobject.Question;
 import com.sk.qna.util.ValidationUtil;
 
+/**
+ * 
+ * @author sdagur
+ *
+ */
 @Service
 @Transactional
 public class QuestionAnswerServiceImpl implements QuestionAnswerService {
@@ -67,12 +72,12 @@ public class QuestionAnswerServiceImpl implements QuestionAnswerService {
 
 	@Override
 	public List<String> getAnswers(String question) {
-		Optional<Question> question1 = qRep.findByQuestion(question);
+		Optional<Question> questionInDb = qRep.findByQuestion(question);
 		List<String> returnList = new ArrayList<>();
-		if (question1.isPresent()) {
-			Question q = question1.get();
-			List<Answer> aa = q.getAnswers().stream().collect(Collectors.toList());
-			for (Answer answer : aa) {
+		if (questionInDb.isPresent()) {
+			Question q = questionInDb.get();
+			List<Answer> answers = q.getAnswers().stream().collect(Collectors.toList());
+			for (Answer answer : answers) {
 				returnList.add(answer.getAnswer());
 			}
 		}
@@ -86,13 +91,13 @@ public class QuestionAnswerServiceImpl implements QuestionAnswerService {
 	@Override
 	@Transactional
 	public Question save(Question question) throws Exception {
-		Question q = qRep.save(question);
-		Set<Answer> answers = q.getAnswers();
+		Question savedQuestion = qRep.save(question);
+		Set<Answer> answers = savedQuestion.getAnswers();
 		for (Answer answer : answers) {
-			answer.setQuestion(q);
+			answer.setQuestion(savedQuestion);
 			aRepo.save(answer);
 		}
-		return q;
+		return savedQuestion;
 	}
 
 }
