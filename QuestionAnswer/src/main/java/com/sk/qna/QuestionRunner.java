@@ -78,6 +78,7 @@ public class QuestionRunner implements CommandLineRunner {
 		String[] answerArr = answer.split("\\?");
 		if (answerArr.length > 1) {
 			String question = answerArr[0];
+			if(ValidationUtil.validateQuestion(question)) {
 			String answers = answerArr[1];
 			if(ValidationUtil.validateAnswerFormat(answers)) {
 			service.addQuestion(question, answers);
@@ -85,7 +86,11 @@ public class QuestionRunner implements CommandLineRunner {
 				System.out.println("Invlid answer format. Format should be " +"\""+"<ans1>"+"\""+"<ans2>"+"\""+"...");
 			}
 		} else {
-			System.out.println("Invlid format. Format should be " +"<que>"+"?"+"\""+"<ans1>"+"\""+"<ans2>"+"\""+"...");
+			System.out.println("Invalid format. Format should be " +"<que>"+"?"+"\""+"<ans1>"+"\""+"<ans2>"+"\""+"...");
+		}
+		}
+		else {
+			System.out.println("Question can not be empty.");
 		}
 	}
 

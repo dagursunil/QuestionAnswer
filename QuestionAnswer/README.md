@@ -4,8 +4,8 @@ This project will take user inputs as 1 & 2 and provide answers for questions as
 If answer is not available a generic answer will be provided.
 # Points to be noted
 
-1.) While adding a question format should be as question?"answer1""answer2"....
-2.)	H2 console has been disabled currently .
+a.) While adding a question format should be as question?"answer1""answer2"....
+b.)	H2 console has been disabled currently .
 3.) Logging has been disabled explicitly.
 
 # How to build

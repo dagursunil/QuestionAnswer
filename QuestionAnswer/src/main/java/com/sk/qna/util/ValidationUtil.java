@@ -9,7 +9,7 @@ public class ValidationUtil {
 
 	public static boolean validateLength(String input) {
 		
-		if(input==null || input.length()>256) {
+		if(input==null || input.length()>255) {
 			return false;
 		}
 		return true;
@@ -20,5 +20,12 @@ public class ValidationUtil {
 			return true;
 		}
 		return false;
+	}
+	
+	public static boolean validateQuestion(String input) {
+		if(input==null || input.isEmpty()) {
+			return false;
+		}
+		return true;
 	}
 }
